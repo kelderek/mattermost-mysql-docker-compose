@@ -1,0 +1,20 @@
+# https://docs.docker.com/compose/environment-variables/
+
+version: "2.4"
+
+services:
+  mysql:
+    image: mysql
+    hostname: mattermost_mysql
+    container_name: mattermost_mysql
+    restart: "no"
+    volumes:
+      - ${MYSQL_PATH}:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+#Uncomment the lines below if you need to connect from another system
+#    ports:
+#      - 3306:3306
