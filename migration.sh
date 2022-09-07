@@ -124,8 +124,8 @@ do
    done
 done
 echo
-echo "Running migration script to allow mmuser to access the database from % instead of localhost, and update collation for MySQL 8"
-echo "This might take a while; for my server with about 300k posts it took about 30 minutes."
+echo "Running migration script to allow mmuser to access the database from % instead of localhost, and updating collation for MySQL 8"
+echo "This might take a while; my server from 2015 took about 20 minutes for our Mattermost instance with about 300k posts."
 docker exec -it mattermost_mysql mysql -p -e source /var/lib/mysql/mysql8-migration.sql
 rm -f ${DEST_MYSQL_PATH}/mysql8-migration.sql
 docker-compose -f ${DEST_COMPOSE_PATH}/mysql-only.yml down
