@@ -1,4 +1,5 @@
 #Update permissions to allow mmuser to connect from the other container
+#Change the database from mattermost and user from mmuser if necessary for your environment
 use mysql;
 update user set host='%' where user='mmuser' and host='localhost';
 update db set host='%' where db='mattermost' and user='mmuser' and host='localhost';

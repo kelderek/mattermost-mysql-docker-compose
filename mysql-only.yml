@@ -1,4 +1,5 @@
 # https://docs.docker.com/compose/environment-variables/
+# Used only for initial migration or if you want to spin up just the database for maintenance
 
 version: "2.4"
 

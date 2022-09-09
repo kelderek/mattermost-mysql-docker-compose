@@ -17,7 +17,7 @@ The official docker-compose files use PostgreSQL and migrating from our existing
 ## Usage
 1. Copy ```env.example``` to ```.env``` and update the variables for your system/needs.  Note that I use the "latest" tag for Mattermost and MySQL, which may have some risk, particularly when using MySQL
 2. Update the variables in ```migration.sh``` to match your environment
-3. If you use a database name other than mattermost, update the ```mysql8-mattermost.sql``` script with the correct database name
+3. If you use a database name other than mattermost or db username other than mmuser, update the ```mysql8-mattermost.sql``` script with the correct database name and/or user
 4. Stop the MySQL service on the source server
 5. Run ```sudo ./migration.sh``` to start the process of migrating data and setting up the docker containers
 
