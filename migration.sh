@@ -1,4 +1,15 @@
 #!/bin/bash
+
+#variables
+MIGRATION_USER=migration_user
+SOURCE_MATTERMOST_HOST=mattermost_server
+SOURCE_MATTERMOST_PATH=/opt/mattermost
+SOURCE_MYSQL_HOST=mysql_server
+SOURCE_MYSQL_PATH=/var/lib/mysql
+DEST_COMPOSE_PATH=/etc/docker/compose/mattermost
+DEST_MATTERMOST_PATH=/etc/docker/compose/mattermost/volumes/mattermost
+DEST_MYSQL_PATH=/etc/docker/compose/mattermost/volumes/mysql
+
 echo
 echo "Before continuing, make sure you have:"
 echo "--Updated the variables in this file to match your environment"
@@ -23,16 +34,6 @@ do
    fi
    echo "Sorry, I didn't understand that. Please type yes or no"
 done
-
-#variables
-MIGRATION_USER=migration_user
-SOURCE_MATTERMOST_HOST=mattermost_server
-SOURCE_MATTERMOST_PATH=/opt/mattermost
-SOURCE_MYSQL_HOST=mysql_server
-SOURCE_MYSQL_PATH=/var/lib/mysql
-DEST_COMPOSE_PATH=/etc/docker/compose/mattermost
-DEST_MATTERMOST_PATH=/etc/docker/compose/mattermost/volumes/mattermost
-DEST_MYSQL_PATH=/etc/docker/compose/mattermost/volumes/mysql
 
 echo
 echo "Creating the data folders..."
